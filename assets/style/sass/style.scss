@@ -1,5 +1,8 @@
 @use "forward" as fw;
 
+* {
+  font-family: "Open Sans", sans-serif;
+}
 .header-content {
   background-color: rgb(27, 27, 27);
 
@@ -14,10 +17,14 @@
     color: aliceblue;
 
     h1 {
-      font-size: 40px;
+      font-family: "Exo 2", sans-serif;
+      font-size: 42px;
       text-transform: uppercase;
     }
     ul {
+      font-size: 14px;
+      letter-spacing: 2px;
+      font-weight: 600;
       display: flex;
       gap: 20px;
       li {
@@ -38,16 +45,22 @@
   margin: auto;
   text-align: center;
   main {
+    text-transform: uppercase;
+    margin-bottom: 50px;
     h3 {
-      font-size: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: -15px;
     }
     h1 {
-      font-size: 46px;
+      font-size: 52px;
+      font-weight: 800;
     }
   }
   .slide {
     height: 560px;
-    background-color: antiquewhite;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
   }
 }
 .flex-grid {
@@ -56,56 +69,69 @@
 
   > :first-child {
     grid-area: first;
-    background-color: rgba(149, 255, 0, 0.729);
+    background-color: rgb(147, 147, 147);
+    @include fw.article-content;
   }
   > :nth-child(2) {
     grid-area: nth2;
     background-color: rgb(189, 69, 69);
+    @include fw.article-content;
   }
   > :nth-child(3) {
     grid-area: nth3;
     background-color: rgb(152, 147, 216);
+    @include fw.article-content;
   }
   > :nth-child(4) {
     grid-area: nth4;
-    background-color: rgb(147, 216, 153);
+    background-color: rgb(70, 162, 84);
+    @include fw.article-content;
   }
   > :nth-child(5) {
     grid-area: nth5;
-    background-color: rgb(216, 200, 147);
+    background-color: rgb(180, 165, 115);
+    @include fw.article-content;
   }
   > :nth-child(6) {
     grid-area: nth6;
-    background-color: rgb(147, 216, 153);
+    background-color: rgb(70, 162, 84);
+    @include fw.article-content;
   }
   > :nth-child(7) {
     grid-area: nth7;
     background-color: rgb(189, 69, 69);
+    @include fw.article-content;
   }
   > :nth-child(8) {
     grid-area: nth8;
-    background-color: rgba(149, 255, 0, 0.729);
+    background-color: rgb(70, 162, 84);
+    @include fw.article-content;
   }
   > :nth-child(9) {
     grid-area: nth9;
     background-color: rgb(152, 147, 216);
+    @include fw.article-content;
   }
   > :nth-child(10) {
     grid-area: nth10;
     background-color: rgb(189, 69, 69);
+    @include fw.article-content;
   }
   > :nth-child(11) {
     grid-area: nth11;
-    background-color: rgb(216, 200, 147);
+    background-color: rgb(137, 96, 179);
+    @include fw.article-content;
   }
   > :nth-child(12) {
     grid-area: nth12;
-    background-color: rgba(149, 255, 0, 0.729);
+    background-color: rgb(70, 162, 84);
+    @include fw.article-content;
   }
   > :nth-child(13) {
     grid-area: nth13;
     height: 100px;
-    background-color: rgba(195, 0, 255, 0.729);
+    background-color: rgb(164, 116, 76);
+    @include fw.article-content;
   }
 }
 
@@ -115,26 +141,78 @@ footer {
   .footer-wrapper {
     @include fw.max-width;
     @include fw.template-footer;
-
+    div {
+      padding: 20px;
+    }
     > :first-child {
       grid-area: about;
-      background-color: rgba(149, 255, 0, 0.729);
+
+      p {
+        margin-bottom: 10px;
+      }
     }
     > :nth-child(2) {
       grid-area: instagram;
-      background-color: rgb(189, 69, 69);
+      > :last-child {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+        div {
+          background-color: #bd9655;
+          width: 80px;
+          height: 80px;
+          border: 1px solid rgba(255, 255, 255, 0.813);
+        }
+      }
     }
     > :nth-child(3) {
       grid-area: stories;
-      background-color: rgb(152, 147, 216);
+
+      > :last-child {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        > span {
+          cursor: pointer;
+          padding: 5px 7px;
+          font-size: 11px;
+          text-transform: uppercase;
+          font-weight: 600;
+          border: 2px solid #bd9655;
+        }
+      }
     }
     > :nth-child(4) {
       grid-area: medias;
-      background-color: rgba(195, 0, 255, 0.729);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      align-items: center;
+      a {
+        img {
+          width: 35px;
+          height: 35px;
+          border: 1px solid rgb(69, 69, 69);
+          padding: 7px;
+          border-radius: 50%;
+          filter: grayscale(1) contrast(1);
+          transition: all 0.3s ease-out;
+          &:hover {
+            transition: all 0.3s ease-out;
+            filter: grayscale(0) contrast(1);
+            border: 1px solid rgb(78, 78, 78);
+          }
+        }
+      }
     }
     > :nth-child(5) {
       grid-area: developer;
-      background-color: rgba(149, 255, 0, 0.729);
+      a {
+        cursor: pointer;
+        color: #bd9655;
+      }
     }
   }
 }
