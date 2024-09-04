@@ -1,0 +1,81 @@
+@mixin max-width {
+  max-width: 1320px;
+
+  @media (max-width: 740px) {
+    max-width: 700px;
+  }
+}
+
+@mixin template-article {
+  padding: 0px 30px;
+  background-color: rgb(240, 240, 240);
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 560px);
+  gap: 3px;
+  grid-template-areas:
+    "first first first"
+    "nth2 nth3 nth4"
+    "nth5 nth5 nth5"
+    "nth6 nth7 nth8"
+    "nth9 nth9 nth9"
+    "nth10 nth11 nth12"
+    "nth13 nth13 nth13";
+
+  @media (max-width: 740px) {
+    grid-template-rows: repeat(12, 560px);
+    grid-template-areas:
+      "first first first"
+      "nth2 nth2 nth2"
+      "nth3 nth3 nth3"
+      "nth4 nth4 nth4"
+      "nth5 nth5 nth5"
+      "nth6 nth6 nth6"
+      "nth7 nth7 nth7"
+      "nth8 nth8 nth8"
+      "nth9 nth9 nth9"
+      "nth10 nth10 nth10"
+      "nth11 nth11 nth11"
+      "nth12 nth12 nth12"
+      "nth13 nth13 nth13";
+  }
+}
+
+@mixin template-footer {
+  padding: 0px 30px;
+  margin: auto;
+  color: antiquewhite;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 350px 50px 50px;
+  grid-template-areas:
+    "about instagram stories"
+    "medias medias medias"
+    "developer developer developer";
+  @media (max-width: 740px) {
+    grid-template-rows: auto auto auto 50px 50px;
+    grid-template-areas:
+      "about about about"
+      "instagram instagram instagram"
+      "stories stories stories"
+      "medias medias medias"
+      "developer developer developer";
+
+    & > :first-child {
+      grid-row: 1;
+    }
+    & > :nth-child(2) {
+      grid-row: 2;
+    }
+    & > :nth-child(3) {
+      grid-row: 3;
+    }
+    & > :nth-child(4) {
+      grid-row: 4;
+    }
+    & > :nth-child(5) {
+      grid-row: 5;
+    }
+  }
+}
