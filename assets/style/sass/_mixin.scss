@@ -11,7 +11,7 @@
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(6, 560px);
+  grid-template-rows: repeat(6, auto);
   gap: 3px;
   grid-template-areas:
     "first first first"
@@ -19,11 +19,10 @@
     "nth5 nth5 nth5"
     "nth6 nth7 nth8"
     "nth9 nth9 nth9"
-    "nth10 nth11 nth12"
-    "nth13 nth13 nth13";
+    "nth10 nth11 nth12";
 
   @media (max-width: 1000px) {
-    grid-template-rows: repeat(12, 560px);
+    grid-template-rows: repeat(12, auto);
     grid-template-areas:
       "first first first"
       "nth2 nth2 nth2"
@@ -36,8 +35,7 @@
       "nth9 nth9 nth9"
       "nth10 nth10 nth10"
       "nth11 nth11 nth11"
-      "nth12 nth12 nth12"
-      "nth13 nth13 nth13";
+      "nth12 nth12 nth12";
   }
 }
 
@@ -45,7 +43,7 @@
   align-content: flex-end;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.5);
-  > :first-child {
+  & > :first-child {
     position: relative;
     font-family: "Open Sans", sans-serif;
     text-transform: uppercase;
@@ -55,7 +53,7 @@
     padding: 30px;
     .tag {
       display: inline-block;
-      > a {
+      & > a {
         padding: 5px 7px;
         font-size: 10px;
         font-weight: 500;
@@ -90,13 +88,13 @@
           color: #bd9655;
           margin-left: 5px;
         }
-        a {
+        & > a {
           text-decoration: none;
           color: white;
         }
       }
     }
-    > :last-child {
+    & > :last-child {
       display: inline;
       position: absolute;
       bottom: -30px;
