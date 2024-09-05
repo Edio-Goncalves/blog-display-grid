@@ -1,6 +1,6 @@
-# Página Home de um blog (prática de flex-grid)
+# Página Home de um blog (prática de display:grid)
 
-Este repositório contém parte de uma aplicação front-end desenvolvida com HTML, CSS/SASS e JavaScript. O projeto foi elaborado para praticar implementação de layouts responsivos com flex-grid e a estilização com SASS.
+Este repositório contém parte de uma aplicação front-end desenvolvida com HTML, CSS/SASS e JavaScript. O projeto foi elaborado para praticar implementação de layouts responsivos com display:grid e a estilização com SASS.
 
 ![Cover](./assets/image/Captura%20de%20tela%202024-08-23%20211322.png)
 
