@@ -19,19 +19,29 @@
         <i id="bars" class="fa-solid fa-bars" style="color: #f3f3f3"></i>
         <nav id="menu">
           <i id="close" class="fa-solid fa-xmark" style="color: #191a23"></i>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Lifestyle</a></li>
-            <li><a href="#">Travel</a></li>
-            <li><a href="#">Pages</a></li>
-          </ul>
           <div class="search">
             <input id="input-search" type="text" placeholder="pesquisar" />
             <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
           </div>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Lifestyle</a></li>
+            <li><a href="#">Travel</a></li>
+            <li class="drop-hover">
+              <a href="#">Pages</a>
+              <i class="fa-solid fa-caret-down"></i>
+              <div class="drop-submenu">
+                <a href="#">Page 1</a>
+                <a href="#">Page 2</a>
+                <a href="#">Page 3</a>
+                <a href="#">Page 4</a>
+              </div>
+            </li>
+          </ul>
         </nav>
       </header>
     </div>
+
     <!-- main slide -->
     <section class="main-content">
       <main>
@@ -50,7 +60,7 @@
           <a class="overlay" href="#"></a>
           <div class="title-content">
             <div class="tag"><a href="#">lifestyle</a></div>
-            <h2>Titulo da primeira foto</h2>
+            <h2 class="row-col">Titulo da primeira foto</h2>
             <ul>
               <li>May Rodrigues</li>
               <li>setembro 05, 2024</li>
@@ -110,7 +120,7 @@
           <a class="overlay" href="#"></a>
           <div class="title-content">
             <div class="tag"><a href="#">lifestyle</a></div>
-            <h2>Titulo da quinta foto</h2>
+            <h2 class="row-col">Titulo da quinta foto</h2>
             <ul>
               <li>May Rodrigues</li>
               <li>setembro 05, 2024</li>
@@ -170,7 +180,7 @@
           <a class="overlay" href="#"></a>
           <div class="title-content">
             <div class="tag"><a href="#">lifestyle</a></div>
-            <h2>Titulo da nona foto</h2>
+            <h2 class="row-col">Titulo da nona foto</h2>
             <ul>
               <li>May Rodrigues</li>
               <li>setembro 05, 2024</li>

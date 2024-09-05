@@ -3,6 +3,7 @@
 .header-wrap {
   background-color: rgb(27, 27, 27);
   padding: 0px 20px;
+
   .header-content {
     width: 100%;
     max-width: 740px;
@@ -11,6 +12,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px 0px;
+
     > a {
       font-family: "Exo 2", sans-serif;
       font-size: 42px;
@@ -26,10 +28,12 @@
       padding: 10px;
     }
   }
+
   #menu {
     visibility: hidden;
     transition: right 0.3s ease-in;
     right: -300px;
+
     &.active {
       visibility: inherit;
       display: flex;
@@ -41,6 +45,7 @@
   .backDrop {
     visibility: hidden;
     transition: all 0.3s ease-in;
+
     &.active {
       visibility: inherit;
       z-index: 1;
@@ -51,8 +56,13 @@
       width: 100%;
       height: 100vh;
       background-color: rgba(0, 0, 0, 0.5);
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+      }
     }
   }
+
   nav {
     z-index: 2;
     position: fixed;
@@ -85,12 +95,50 @@
         min-width: 100px;
         line-height: 50px;
         padding-left: 20px;
-        background-color: #f3f3f3c5;
+        background-color: #f3f3f3;
         border-bottom: 1px solid rgba(27, 27, 27, 0.315);
+
+        /* DROP SUBMENU */
+        &.drop-hover {
+          position: relative;
+
+          .fa-solid.fa-caret-down {
+            color: black;
+          }
+
+          .drop-submenu {
+            position: absolute;
+            left: 120px;
+            top: 0px;
+            display: flex;
+            flex-direction: column;
+            background-color: #f3f3f3;
+            width: 100%;
+            overflow: hidden;
+            height: 0px;
+            transition: all 0.3s ease;
+
+            a {
+              border-bottom: 1px solid rgba(27, 27, 27, 0.315);
+              padding-left: 10px;
+              &:hover {
+                background-color: #bd9655;
+              }
+            }
+          }
+        }
+
+        &:hover .drop-submenu {
+          height: 205px;
+        }
 
         a {
           text-decoration: none;
           color: black;
+        }
+
+        &:hover {
+          background-color: #bd9655;
         }
       }
     }
@@ -104,7 +152,7 @@
       padding: 10px 10px;
       background-color: white;
       border-radius: 30px;
-      box-shadow: 0 10px 25px rgb(0, 0, 0, 0.3);
+      box-shadow: 0 8px 8px rgb(0, 0, 0, 0.2);
       transition: width 0.8s;
 
       & > input {
@@ -116,10 +164,12 @@
         border: none;
         transition: width 0.8s;
         background: transparent;
+
         &::placeholder {
           color: rgba(0, 0, 0, 0.3);
         }
       }
+
       a .fa-solid {
         margin-left: -8px;
         color: #bd9655;
@@ -132,6 +182,7 @@
 @media (min-width: 740px) {
   .header-wrap {
     padding: 0px 20px;
+
     .header-content {
       gap: 15px;
       width: 100%;
@@ -147,16 +198,20 @@
         display: none;
       }
     }
+
     #menu {
       visibility: inherit;
       display: flex;
+
       &.active {
         flex-direction: row;
       }
     }
+
     .backDrop.active {
       display: none;
     }
+
     nav {
       position: inherit;
       justify-content: space-between;
@@ -164,9 +219,11 @@
       height: inherit;
       width: inherit;
       background-color: transparent;
+
       &::before {
         display: none;
       }
+
       ul {
         flex-direction: row;
         font-size: 14px;
@@ -183,21 +240,66 @@
           padding: 10px;
           border: none;
           background-color: transparent;
+          border-bottom: 1px solid transparent;
+          width: 90px;
+
+          &.drop-hover {
+            position: relative;
+
+            .fa-solid.fa-caret-down {
+              color: #f3f3f3;
+            }
+
+            .drop-submenu {
+              position: absolute;
+              top: 42px;
+              left: 0px;
+              display: flex;
+              flex-direction: column;
+              background-color: rgb(37, 37, 37);
+              width: 90px;
+
+              a {
+                padding: 10px;
+                border-bottom: 1px solid #bd9655;
+                padding-left: 0px;
+                font-size: 14px;
+
+                &:hover {
+                  background-color: #bd9655;
+                }
+              }
+            }
+          }
+          &:hover .drop-submenu {
+            height: 160px;
+          }
 
           a {
-            color: white;
+            text-decoration: none;
+            color: #f3f3f3;
+          }
+
+          &:hover {
+            border-bottom: 1px solid #bd9655;
+            background-color: #bd9655;
           }
         }
       }
+
       .search {
+        order: 3;
         margin: 0px;
         width: 40px;
+
         &:hover {
           width: 250px;
         }
+
         & > input {
           width: 0px;
         }
+
         &:hover input {
           width: 200px;
         }
@@ -301,6 +403,12 @@
           color: white;
           font-weight: 800;
           text-transform: uppercase;
+          &.row-col {
+            font-size: 42px;
+            @media screen and (max-width: 740px) {
+              font-size: 24px;
+            }
+          }
         }
         ul {
           list-style: none;
@@ -313,6 +421,7 @@
           }
         }
       }
+
       &:hover .overlay {
         opacity: 0.6;
       }
@@ -349,6 +458,7 @@
       }
     }
   }
+
   > :nth-child(1) {
     grid-area: first;
     background-image: url("https://matchthemes.com/demowp/mara/wp-content/uploads/2017/01/image-2.jpg");
@@ -411,6 +521,7 @@
     @include fw.bg-img;
   }
 }
+
 .pages {
   grid-area: nth13;
   height: 100px;
