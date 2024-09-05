@@ -21,13 +21,13 @@ Este repositório contém parte de uma aplicação front-end desenvolvida com HT
 1. Clone este repositório:
 
 ```bash
-git clone https://github.com/Edio-Goncalves/blog-flexgrid
+git clone https://github.com/Edio-Goncalves/blog-display-grid
 ```
 
 2. Navegue até o diretório do projeto:
 
 ```bash
-cd blog-flexgrid
+cd blog-display-grid
 ```
 
 3. Abra o arquivo `index.html` no seu navegador preferido para visualizar a aplicação.
