@@ -1,6 +1,15 @@
 @use "forward" as fw;
 
 /* header */
+.dropDown {
+  z-index: 3;
+  position: fixed;
+  display: none;
+  // display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+}
 .header-content {
   background-color: rgb(27, 27, 27);
 
@@ -84,17 +93,18 @@
     header {
       .header-wapper {
         .drop-menu {
+          cursor: pointer;
           display: flex;
-          // display: none;
           position: absolute;
           right: 30px;
           font-size: 24px;
           padding: 10px;
         }
         .menu {
+          z-index: 4;
           display: none;
           flex-direction: column;
-          position: absolute;
+          position: fixed;
           top: 0;
           right: 0;
           width: 100%;
@@ -121,14 +131,16 @@
         }
       }
       .search {
+        z-index: 5;
+        position: fixed;
         right: 75px;
       }
       .close-menu {
+        z-index: 5;
         cursor: pointer;
         display: none;
-        // display: flex;
         align-items: center;
-        position: absolute;
+        position: fixed;
         right: 30px;
         height: 30px;
         padding: 10px 8px;
