@@ -1,6 +1,6 @@
-# Projeto de Website Responsivo
+# Página Home de um blog (prática de flex-grid)
 
-Este repositório contém uma aplicação front-end desenvolvida com HTML, CSS/SASS e JavaScript. O projeto foi elaborado para praticar habilidades de desenvolvimento web, incluindo a implementação de layouts responsivos com flex-grid e a estilização com SASS.
+Este repositório contém parte de uma aplicação front-end desenvolvida com HTML, CSS/SASS e JavaScript. O projeto foi elaborado para praticar implementação de layouts responsivos com flex-grid e a estilização com SASS.
 
 ![Cover](./assets/image/Captura%20de%20tela%202024-08-23%20211322.png)
 
