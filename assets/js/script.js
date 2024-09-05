@@ -1,33 +1,30 @@
-let dropMenu = document.querySelector(".drop-menu");
-let closeMenu = document.querySelector(".close-menu");
-let menu = document.querySelector(".menu");
-let dropDown = document.querySelector(".dropDown");
+let expand = [...document.querySelectorAll(".expand")];
+let cardProcess = [...document.querySelectorAll(".card-process")];
 
-dropMenu.addEventListener("click", () => {
-  menu.style.display = "flex";
-  closeMenu.style.display = "flex";
-  dropDown.style.display = "flex";
+expand.map((e, index) => {
+  e.addEventListener("click", () => {
+    // Fechar todas as outras respostas
+    cardProcess.forEach((cad, i) => {
+      if (i !== index) {
+        cad.classList.add("close");
+      }
+    });
+
+    // Abrir ou fechar a resposta associada à pergunta clicada
+    let cad = cardProcess[index];
+    cad.classList.toggle("close");
+  });
 });
 
-closeMenu.addEventListener("click", () => {
-  menu.style.display = "none";
-  closeMenu.style.display = "none";
-  dropDown.style.display = "none";
-});
+/* menu */
+const menu = document.getElementById("menu");
+const backDrop = document.querySelector(".backDrop");
 
-menu.addEventListener("click", () => {
-  menu.style.display = "none";
-  closeMenu.style.display = "none";
-  dropDown.style.display = "none";
-});
-
-function applyResponsiveStyle() {
-  if (window.innerWidth > 740) {
-    menu.style.display = "none";
-    closeMenu.style.display = "none";
-    dropDown.style.display = "none";
-  }
+function toggleMenu() {
+  menu.classList.toggle("active");
+  backDrop.classList.toggle("active");
 }
+document.getElementById("bars").addEventListener("click", toggleMenu);
+document.getElementById("close").addEventListener("click", toggleMenu);
 
-window.addEventListener("resize", applyResponsiveStyle);
-applyResponsiveStyle();
+backDrop.addEventListener("click", toggleMenu);
